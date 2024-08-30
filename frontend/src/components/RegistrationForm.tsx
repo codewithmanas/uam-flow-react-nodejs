@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
 
 const RegistrationForm = () => {
@@ -28,21 +30,22 @@ const RegistrationForm = () => {
   };
   return (
     <form onSubmit={handleRegister}>
-      <input
+      <Input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
       />
-      <input
+      <Input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
       />
-      <button type="submit">Register</button>
+      {/* <button type="submit">Register</button> */}
+      <Button type="submit">Register Now!</Button>
     </form>
   )
 }

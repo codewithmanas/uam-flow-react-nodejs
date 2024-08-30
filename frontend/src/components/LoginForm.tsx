@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -18,21 +20,22 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleLogin}>
-      <input
+      <Input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
       />
-      <input
+      <Input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
       />
-      <button type="submit">Login</button>
+      {/* <button type="submit">Login</button> */}
+      <Button type="submit">Login Now!</Button>
     </form>
   );
 };
