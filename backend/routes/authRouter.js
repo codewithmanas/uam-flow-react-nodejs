@@ -6,6 +6,12 @@ import { authClient } from '../db/authQuery.js';
 
 const router = express.Router();
 
+// Router-level middleware
+router.use((req, res, next) => {
+  console.log('This runs for router-specific routes');
+  next();
+});
+
 // Register route
 router.post('/register', async (req, res, next) => {
   const { email, password } = req.body;
